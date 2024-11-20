@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Tarea6Unidad2</title>
+</head>
+
+<body>
+    <section class="ancho">
+
+        <div class="titulos">
+            <p>OUR WORKS</p>
+            <h1>Latest Proyects</h1>
+        </div>
+
+        <ul class="table_select">
+            <li><a href="#table1">ALL ITEMS</a></li>
+            <li><a href="#table2">MOBIL APP</a></li>
+            <li><a href="#table3">WEB APP</a></li>
+            <li><a href="#table4">CUSTOM SOFT</a></li>
+            <li><a href="#table5">UI/UX</a></li>
+        </ul>
+
+        <article>
+            <div class="table_content table_all" id="table1">
+
+                <figure class="foto1">
+                    <img src="imagenes/port7.jpg" alt="">
+                </figure>
+
+                <figure class="foto2">
+                    <img src="imagenes/port2.png" alt="">
+                </figure>
+
+                <figure class="foto3">
+                    <img src="imagenes/port7.jpg" alt="">
+                </figure>
+
+                <figure class="foto4">
+                    <img src="imagenes/port6.jpg" alt="">
+                </figure>
+
+                <figure class="foto5">
+                    <img src="imagenes/port3.jpg" alt="">
+                </figure>
+            </div>
+
+            <div class="table_content table_mobil" id="table2">
+                <figure>
+                    <img src="imagenes/port7.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="imagenes/port6.jpg" alt="">
+                </figure>
+            </div>
+
+            <div class="table_content table_web" id="table3">
+                <figure>
+                    <img src="imagenes/port2.png" alt="">
+                </figure>
+                <figure>
+                    <img src="imagenes/port3.jpg" alt="">
+                </figure>
+            </div>
+
+            <div class="table_content table_soft" id="table4">
+                <figure>
+                    <img src="imagenes/port6.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="imagenes/port7.jpg" alt="">
+                </figure>
+            </div>
+
+            <div class="table_content table_ux" id="table5">
+                <figure>
+                    <img src="imagenes/port7.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="imagenes/port2.png" alt="">
+                </figure>
+            </div>
+
+        </article>
+    </section>
+
+    <script>
+
+        $(".table_content").hide(); 
+        $(".table_select li:first").addClass("active").show();
+        $(".table_content:first").show();
+        $("ul.table_select li").click(function () {
+
+            $(".table_select li").removeClass("active");
+            $(this).addClass("active");
+            $(".table_content").hide();
+
+            var activeTab = $(this).find("a").attr("href");
+            $(activeTab).fadeIn();
+            return false;
+        })
+    </script>
+</body>
+
+</html>
